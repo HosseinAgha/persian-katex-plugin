@@ -39,6 +39,6 @@ katex.plugin(new persianKatexPlugin());
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)  
 
-`yarn install` then `yarn run dev` to run access development server.  
+`yarn install` then `yarn run dev` to run development server.  
    
 
