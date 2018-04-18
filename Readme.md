@@ -1,5 +1,5 @@
-This is a [KaTeX](https://github.com/Khan/KaTeX) plugin that is designed to 
-add support for Persian math formulas to KaTeX.  
+This is a [KaTeX](https://github.com/Khan/KaTeX) plugin that 
+adds support for Persian math formulas to KaTeX.  
 It adds following to the KaTeX:  
   1. Support for Persian and Arabic numerals [۰-۹] in formulas (math mode)
   2. Support for Persian and Arabic characters [unicode 0x0660 to 0x06FF] in text inside formules (text mode)
