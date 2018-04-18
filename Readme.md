@@ -7,7 +7,6 @@ All the Persian and Arabic characters use open source [Vazir font](https://githu
 
 <h2 align="center">Usage</h2> 
 
----
 To use this plugin follow [KaTeX usage guidelines](https://github.com/Khan/KaTeX#usage) 
 in order add KaTeX to your environment.  
 
@@ -38,5 +37,4 @@ katex.plugin(new persianKatexPlugin());
 
 <h2 align="center">Contribution</h2> 
 
----
 `yarn install` then `yarn run dev` to access development server.  
