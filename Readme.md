@@ -8,9 +8,9 @@ All the Persian and Arabic characters use open source [Vazir font](https://githu
 <h2 align="center">Usage</h2> 
 
 To use this plugin follow [KaTeX usage guidelines](https://github.com/Khan/KaTeX#usage) 
-in order add KaTeX to your environment.  
+in order to add KaTeX to your environment.  
 
-Then install the plugin using:  
+Then install the plugin by:  
 ### npm
   - install package:  
     ```npm install persian-katex-plugin``` or ```yarn add persian-katex-plugin```
@@ -26,7 +26,7 @@ Then install the plugin using:
 ``` -->
 
 Finally you need to add the plugin to KaTeX before calling `katex.render`.   
-Your final code should be like this:  
+Your final code should be something like this:  
 ```javascript
 import 'perisan-katex-plugin/dist/index.css';
 import katex from 'katex';
@@ -37,4 +37,5 @@ katex.plugin(new persianKatexPlugin());
 
 <h2 align="center">Contribution</h2> 
 
-`yarn install` then `yarn run dev` to access development server.  
+`yarn install` then `yarn run dev` to run access development server.  
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
