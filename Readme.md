@@ -37,5 +37,8 @@ katex.plugin(new persianKatexPlugin());
 
 <h2 align="center">Contribution</h2> 
 
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)  
+
 `yarn install` then `yarn run dev` to run access development server.  
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+   
+
