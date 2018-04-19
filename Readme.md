@@ -39,7 +39,7 @@ katex.plugin(new persianKatexPlugin());
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)  
 
-you have clone and `yarn link` to https://github.com/HosseinAgha/KaTeX until https://github.com/Khan/KaTeX/pull/1263 merges.
-`yarn install` then `yarn run dev` to run development server.  
+you have clone and `yarn link` to https://github.com/HosseinAgha/KaTeX until https://github.com/Khan/KaTeX/pull/1263 merges.  
+run `yarn install` then `yarn run dev` to run development server.  
    
 
