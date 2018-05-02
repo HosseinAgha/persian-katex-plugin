@@ -53,7 +53,7 @@ to the plugin as its second options paramter.
 Following is an example for how we generated default Vazir font metrics.  
 You have to provide the path to _truetype (ttf)_ files of your font (metrics are usually the same for other file types).  
 You also need to provide each font name in the following format: `[fontname]-[Regular/Bold/Italic/BoldItalic]`.  
-You can also a provide an aditional unicodeRange array to define which range of unicode characters you want to extract from font file.  
+You can also provide an aditional unicodeRange array to define which range of unicode characters you want to extract from font file.  
 ```javascript
 const generateMetrics = require("perisan-katex-plugin/utils/generateMetrics");
 const path = require("path");
@@ -121,5 +121,4 @@ addPersianTo(katex, {
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-you have clone and `yarn link` to https://github.com/HosseinAgha/KaTeX until https://github.com/Khan/KaTeX/pull/1263 merges.
 run `yarn install` then `yarn run dev` to run development server.
