@@ -1,10 +1,11 @@
 import './App.less';
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
-import katex from 'katex/katex.webpack.js';
+import 'katex/dist/katex.css';
+import katex from 'katex';
 import persianKatexPlugin from '../src/index';
 
-katex.plugin(new persianKatexPlugin());
+persianKatexPlugin(katex);
 
 class App extends Component {
   constructor(props){
@@ -18,10 +19,10 @@ class App extends Component {
       <div>
         <textarea
           style={{ height: 32, width: 260 }}
-          onChange={(e) => this.setState({inputValue: e.target.value})} 
+          onChange={(e) => this.setState({inputValue: e.target.value})}
           value={this.inputValue}
         />
-        <div 
+        <div
           ref={(e) => this.box = e}
           style={{ padding: 20 }}
         >

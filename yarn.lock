@@ -3684,9 +3684,9 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
-"katex@https://github.com/HosseinAgha/KaTeX":
+katex@HosseinAgha/KaTeX#plugin-prerelease:
   version "0.10.0-pre"
-  resolved "https://github.com/HosseinAgha/KaTeX#e1ce157fb23e353628b7af932db46ed1ce80bde4"
+  resolved "https://codeload.github.com/HosseinAgha/KaTeX/tar.gz/0cf60056e41d83889e142350a6991b880801cb7f"
   dependencies:
     match-at "^0.1.1"
     nomnom "^1.8.1"
