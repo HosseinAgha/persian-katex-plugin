@@ -1,3 +1,5 @@
+## this is work in progress until the katex api finalizes
+
 This is a [KaTeX](https://github.com/Khan/KaTeX) plugin that
 adds support for Persian math formulas to KaTeX.
 It adds following to the KaTeX:
@@ -11,7 +13,7 @@ To use this plugin follow [KaTeX usage guidelines](https://github.com/Khan/KaTeX
 in order to add KaTeX to your environment.
 
 Then install the plugin by:
-### npm
+## npm
   - install package:
     ```npm install persian-katex-plugin``` or ```yarn add persian-katex-plugin```
   - import css files using a bundler like [`webpack`](https://webpack.js.org/) and [`css-loader`](https://github.com/webpack-contrib/css-loader):
@@ -30,10 +32,89 @@ Your final code should be something like this:
 ```javascript
 import katex from 'katex';
 import 'katex/dist/katex.css';
-import persianKatexPlugin from 'persian-katex-plugin';
+import addPersianTo from 'persian-katex-plugin';
 import 'perisan-katex-plugin/dist/index.css';
 
-persianKatexPlugin(katex);
+addPersianTo(katex);
+```
+
+All the persian and arabic characters will render using the 'Vazir' font.
+You should change your western numerals ([0-9]) to eastern numerals [۰-۹].
+
+## changing the font
+
+As KaTeX calculates the character sizes statically (at the compile time)
+using a new font for your formulas is not as easy as changing a font of a css class.
+To change the font of Persian and Arabic characters and numerals
+you need to first calculate the character metrics for your font and then provide the metrics and fontName
+to the plugin as its second options paramter.
+
+1. using `persian-katex-plugin/utils/generateMetrics.js` script you can create a json file for you metrics.
+Following is an example for how we generated default Vazir font metrics.
+You have to provide the path for _truetype (ttf)_ files of your font (metrics are usually the same for other file types)
+You have to provide each font name in the following format: "[fontname]-[Regular/Bold/Italic/BoldItalic]"
+You can also a provide an aditional unicodeRange array to define which range of unicode characters you want to extract from font file.
+```javascript
+const generateMetrics = require("perisan-katex-plugin/utils/generateMetrics");
+const path = require("path");
+
+const metricOptions = [
+    {
+        fontname: 'Vazir-Regular',
+        filepath: path.resolve("fonts/Vazir.ttf"),
+    //  unicodeRange: defualts to [0x0600, 0x06FF]
+    },
+    {
+        fontname: 'Vazir-Bold',
+        filepath: path.resolve("fonts/Vazir-Bold.ttf"),
+    },
+];
+const outputPath = path.resolve(__dirname, "src/fontMetrics.json");
+
+generateMetrics(metricOptions, outputPath);
+```
+
+2. After generating the font metrics file you need to add the metrics and font name options to the plugin.
+```javascript
+import katex from 'katex';
+import 'katex/dist/katex.css';
+import addPersianTo from 'persian-katex-plugin';
+import 'perisan-katex-plugin/dist/index.css';
+import awesomeFontMetrics from 'path-to-awesomeFontMetrics.js';
+
+addPersianTo(katex, {
+  fontName: "MyAwesomeFont",
+  fontMetrics: awesomeFontMetrics
+});
+```
+
+3. finally add a font-face and a css class for each fontname you provided to generateFontMetrics.
+```javascript
+@font-face {
+    font-family: 'AwesomeFont-Regular';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/AwesomeFont.woff2') format('woff2'),
+        url('../fonts/AwesomeFont.woff') format('woff'),
+        url('../fonts/AwesomeFont.ttf') format('ttf');
+}
+
+@font-face {
+    font-family: 'AwesomeFont-Bold';
+    font-weight: bold;
+    font-style: normal;
+    src: url('../fonts/AwesomeFont-Bold.woff2') format('woff2'),
+        url('../fonts/AwesomeFont-Bold.woff') format('woff'),
+        url('../fonts/AwesomeFont-Bold.ttf') format('ttf');
+}
+
+.AwesomeFont-Regular {
+    font-family: 'AwesomeFont-Regular';
+}
+
+.AwesomeFont-Bold {
+    font-family: 'AwesomeFont-Bold';
+}
 ```
 
 <h2 align="center">Contribution</h2>

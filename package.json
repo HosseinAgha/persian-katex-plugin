@@ -4,9 +4,9 @@
   "description": "KaTeX plugin to render formulas with persian characters",
   "main": "build/index.js",
   "scripts": {
-    "prepublishOnly": "npm run build",
-    "generateMetrics": "node generateMetrics.js",
+    "generateMetrics": "node generateDefaultMetrics.js",
     "dev": "webpack-dev-server --hot",
+    "prepare": "npm run build",
     "prebuild": "npm run generateMetrics",
     "build": "cross-env NODE_ENV=production webpack"
   },
