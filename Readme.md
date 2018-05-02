@@ -44,16 +44,16 @@ You should change your western numerals ([0-9]) to eastern numerals [۰-۹].
 ## changing the font
 
 As KaTeX calculates the character sizes statically (at the compile time)
-using a new font for your formulas is not as easy as changing a font of a css class.
+using a new font for your formulas is not as easy as changing a font of a css class.  
 To change the font of Persian and Arabic characters and numerals
 you need to first calculate the character metrics for your font and then provide the metrics and fontName
 to the plugin as its second options paramter.
 
 1. using `persian-katex-plugin/utils/generateMetrics.js` script you can create a json file for you metrics.
-Following is an example for how we generated default Vazir font metrics.
-You have to provide the path for _truetype (ttf)_ files of your font (metrics are usually the same for other file types)
-You have to provide each font name in the following format: "[fontname]-[Regular/Bold/Italic/BoldItalic]"
-You can also a provide an aditional unicodeRange array to define which range of unicode characters you want to extract from font file.
+Following is an example for how we generated default Vazir font metrics.  
+You have to provide the path to _truetype (ttf)_ files of your font (metrics are usually the same for other file types).  
+You also need to provide each font name in the following format: `[fontname]-[Regular/Bold/Italic/BoldItalic]`.  
+You can also a provide an aditional unicodeRange array to define which range of unicode characters you want to extract from font file.  
 ```javascript
 const generateMetrics = require("perisan-katex-plugin/utils/generateMetrics");
 const path = require("path");
