@@ -17,6 +17,10 @@ function _addPersianSymbols(katex, fontName) {
         const ch = String.fromCharCode(charCode);
         katex.__defineSymbol("text", fontName, "textord", ch, ch);
     }
+    // zero width non-joiner is frequently used in persian text
+    const ch = String.fromCharCode(0x200C);
+    katex.__defineSymbol("text", fontName, "textord", ch, ch);
+
     // add all persian & arabic numbers as textords in math mode
     for (let number = 0; number <= 9; number++) {
         const persianNum = String.fromCharCode(0x0660 + number);
