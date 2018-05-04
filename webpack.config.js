@@ -16,6 +16,7 @@ module.exports = {
         library: 'persian-katex-plugin',
         libraryTarget: 'umd',
         libraryExport: 'default',
+        globalObject: 'this',
         path: path.resolve(__dirname, 'build'),
         publicPath: dev ? '/' : ''
     },
