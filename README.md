@@ -88,7 +88,7 @@ addPersianTo(katex, {
 });
 ```
 
-3. finally add a font-face and a css class for each fontname you provided to generateFontMetrics.
+3. finally add a font-face and following css class for each fontname you provided to generateFontMetrics.
 ```javascript
 @font-face {
     font-family: 'AwesomeFont-Regular';
@@ -106,6 +106,14 @@ addPersianTo(katex, {
     src: url('../fonts/AwesomeFont-Bold.woff2') format('woff2'),
         url('../fonts/AwesomeFont-Bold.woff') format('woff'),
         url('../fonts/AwesomeFont-Bold.ttf') format('ttf');
+}
+
+// bidi algorithm generates wrong result for 
+// inline persian and english \text combinations 
+// so we make all \text inline-block
+.katex .mord.text .AwesomeFont-Regular, 
+.katex .mord.text .AwesomeFont-Bold {
+    display: inline-block;
 }
 
 .AwesomeFont-Regular {

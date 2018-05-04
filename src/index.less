@@ -21,6 +21,14 @@
     direction: ltr;
 }
 
+// bidi algorithm generates wrong result for
+// inline persian and english \text combinations
+// so we make all text inline-block
+.katex .mord.text .Vazir-Regular,
+.katex .mord.text .Vazir-Bold {
+    display: inline-block;
+}
+
 .Vazir-Regular {
     font-family: 'Vazir-Regular';
 }
