@@ -1,6 +1,6 @@
 {
   "name": "persian-katex-plugin",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "KaTeX plugin to render formulas with persian characters",
   "main": "build/index.js",
   "scripts": {
