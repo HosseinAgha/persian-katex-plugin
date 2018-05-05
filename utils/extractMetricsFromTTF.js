@@ -18,7 +18,7 @@ function generateMetrics(fontInfo, unicodeRange) {
             minY = -cbox.minY;
         }
         const depth = minY / unitsPerEm;
-        const charCode = (0x0600 + i) + "";
+        const charCode = (firstCharCode + i) + "";
         metrics[charCode] = [ depth, height, 0, 0 ];
         // const width = cbox.maxX - cbox.minX;
     }
@@ -27,9 +27,14 @@ function generateMetrics(fontInfo, unicodeRange) {
 
 module.exports = function generateMetricsFromTTF(fonts) {
     const metricMap = {};
-    for (const { fontname, filepath, unicodeRange } of fonts) {
+    for (let { fontname, filepath, unicodeRange, singleCodes } of fonts) {
         const fontInfo = fontkit.openSync(filepath);
         metricMap[fontname] = generateMetrics(fontInfo, unicodeRange);
+
+        // add single unicode characters one by one to the font metrics object
+        for (let code of singleCodes) {
+            Object.assign(metricMap[fontname], generateMetrics(fontInfo, [code, code]))
+        }
     }
     return metricMap;
 };

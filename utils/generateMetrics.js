@@ -8,6 +8,8 @@ module.exports = function generateMetrics(metricOptions, outputPath) {
         if (font.unicodeRange == null) {
             font.unicodeRange = persianArabicUnicodeRange;
         }
+        font.singleCodes = [ 0x200C ] // zero width non joiner and other special characters
+
         return font;
     });
 
