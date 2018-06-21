@@ -28,7 +28,7 @@
     "flow-bin": "^0.70.0",
     "git": "^0.1.5",
     "html-webpack-plugin": "^3.2.0",
-    "katex": "HosseinAgha/KaTeX#plugin-prerelease",
+    "katex": "^0.10.0-beta",
     "less": "^3.0.1",
     "less-loader": "^4.1.0",
     "react": "^16.3.2",
