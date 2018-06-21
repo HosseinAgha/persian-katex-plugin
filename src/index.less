@@ -1,7 +1,8 @@
 // persian formulas are ltr in a rtl context
 // this prevent faulty bidi algorithm for inline Persian characters in formulas
-// this also prevents formulas from being distorted in rtl direction
+// this also prevents formulas from being distorted inside a rtl direction paragraph
 .katex {
+    display: inline-block; // to prevent awkward behaviour of inline formulas near characters like `،`
     direction: ltr;
     unicode-bidi: bidi-override;
 }
