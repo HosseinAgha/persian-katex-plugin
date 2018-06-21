@@ -1,3 +1,11 @@
+// persian formulas are ltr in a rtl context
+// this prevent faulty bidi algorithm for inline Persian characters in formulas
+// this also prevents formulas from being distorted in rtl direction
+.katex {
+    direction: ltr;
+    unicode-bidi: bidi-override;
+}
+
 @font-face {
     font-family: 'Vazir-Regular';
     font-weight: normal;
@@ -14,24 +22,6 @@
     src: url('../fonts/Vazir-Bold.woff2') format('woff2'),
         url('../fonts/Vazir-Bold.woff') format('woff'),
         url('../fonts/Vazir-Bold.ttf') format('ttf');
-}
-
-// persian formulas are ltr in a rtl context
-.katex {
-    direction: ltr;
-}
-
-// bidi algorithm generates wrong result for
-// inline persian and english \text combinations
-// so we make all text inline-block
-.katex .mord.text .Vazir-Regular,
-.katex .mord.text .Vazir-Bold {
-    display: inline-block;
-}
-
-.katex .mord.text {
-    display: inline-block;
-    direction: rtl;
 }
 
 .Vazir-Regular {
