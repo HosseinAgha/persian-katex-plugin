@@ -1,8 +1,6 @@
-## this is work in progress until the katex api finalizes
-
 This is a [KaTeX](https://github.com/Khan/KaTeX) plugin that
-adds support for Persian math formulas to KaTeX.
-It adds following to the KaTeX:
+adds support for Persian math formulas.
+It adds the following to the KaTeX:
   1. Support for Persian and Arabic numerals [۰-۹] in formulas (math mode)
   2. Support for Persian and Arabic characters [unicode 0x0660 to 0x06FF] in text inside formules (text mode)
 All the Persian and Arabic characters use open source [Vazir font](https://github.com/rastikerdar/vazir-font).
@@ -39,12 +37,12 @@ addPersianTo(katex);
 ```
 
 All the persian and arabic characters will render using the 'Vazir' font.
-You should change your western numerals ([0-9]) to eastern numerals [۰-۹].
+You should change your western numeral characters ([0-9]) to eastern numerals [۰-۹].
 
 ## changing the font
 
-As KaTeX calculates the character sizes statically (at the compile time)
-using a new font for your formulas is not as easy as changing a font of a css class.  
+As KaTeX calculates the character sizes statically (at compile time)
+using a new font for your formulas is not as easy as changing the font of a css class.  
 To change the font of Persian and Arabic characters and numerals
 you need to first calculate the character metrics for your font and then provide the metrics and fontName
 to the plugin as its second options paramter.
