@@ -15,7 +15,7 @@ Then install the plugin by:
   - install package:
     ```npm install persian-katex-plugin``` or ```yarn add persian-katex-plugin```
   - import css files using a bundler like [`webpack`](https://webpack.js.org/) and [`css-loader`](https://github.com/webpack-contrib/css-loader):
-    ```import 'perisan-katex-plugin/dist/index.css'```
+    ```import 'perisan-katex-plugin/build/index.css'```
   - you also need [`file-loader`](https://github.com/webpack-contrib/file-loader)
     in your webpack config in order for the plugin to load font files.
 
@@ -31,7 +31,7 @@ Your final code should be something like this:
 import katex from 'katex';
 import 'katex/dist/katex.css';
 import addPersianTo from 'persian-katex-plugin';
-import 'perisan-katex-plugin/dist/index.css';
+import 'perisan-katex-plugin/build/index.css';
 
 addPersianTo(katex);
 ```
@@ -77,7 +77,7 @@ generateMetrics(metricOptions, outputPath);
 import katex from 'katex';
 import 'katex/dist/katex.css';
 import addPersianTo from 'persian-katex-plugin';
-import 'perisan-katex-plugin/dist/index.css';
+import 'perisan-katex-plugin/build/index.css';
 import awesomeFontMetrics from 'path-to-awesomeFontMetrics.js';
 
 addPersianTo(katex, {
