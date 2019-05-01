@@ -42,8 +42,7 @@ You should change your western numeral characters ([0-9]) to eastern numerals [Û
 ## changing the font
 
 As KaTeX calculates the character sizes statically (at compile time)
-using a new font for your formulas is not as easy as changing the font of a css class.  
-you can read this [awesome article on font metrics](http://westonthayer.com/writing/intro-to-font-metrics/) to better understand the situation!
+using a new font for your formulas is not as easy as changing the font of a css class. You can read this [awesome article on font metrics](http://westonthayer.com/writing/intro-to-font-metrics/) to better understand the situation!  
 To change the font of Persian and Arabic characters and numerals
 you need to first calculate the character metrics for your font and then provide the metrics and fontName
 to the plugin as its second options paramter.
