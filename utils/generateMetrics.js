@@ -16,7 +16,7 @@ module.exports = function generateMetrics(metricOptions, outputPath) {
     const metricMap = extractMetricsFromTTF(metricOptions);
 
     fs.writeFileSync(
-    outputPath,
-    JSON.stringify(metricMap)
+        outputPath,
+        JSON.stringify(metricMap)
     );
 }

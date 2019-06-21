@@ -47,7 +47,7 @@ To change the font of Persian and Arabic characters and numerals
 you need to first calculate the character metrics for your font and then provide the metrics and fontName
 to the plugin as its second options paramter.
 
-1. using `persian-katex-plugin/utils/generateMetrics.js` script you can create a json file for you metrics.
+1. using `persian-katex-plugin/utils/generateMetrics.js` script you can create a json file for your metrics.
 Following is an example for how we generated default Vazir font metrics.  
 You have to provide the path to _truetype (ttf)_ files of your font (metrics are usually the same for other file types).  
 You also need to provide each font name in the following format: `[fontname]-[Regular/Bold/Italic/BoldItalic]`.  
