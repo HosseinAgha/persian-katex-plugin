@@ -56,7 +56,6 @@ module.exports = {
         ],
     },
     plugins: [
-        dev && new HTMLPlugin(),
         new ExtractTextPlugin({
             filename: '[name].css',
             disable: dev,
